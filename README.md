@@ -1,6 +1,6 @@
 # GameDev-Project
 
-#Membrii echipei:
+# Membrii echipei:
 
       Tudor oprea
       Albert-Ionut Balauta-Amargheoalei
