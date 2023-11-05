@@ -1,1 +1,1 @@
-# Aici vom incarca fiecare raport intocmit.
+# Aici vom incarca fiecare raport intocmit pentru fiecare din cele 5 sprinturi.
