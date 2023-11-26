@@ -10,6 +10,8 @@ Every player will have their predefined abilities and can scale up their power b
 
 ![ERROR](https://github.com/inginerie-software-2023-2024/proiect-inginerie-software-boddfba/blob/main/Images/Product_features%26functionalities.png)
 
+![ERROR](https://github.com/inginerie-software-2023-2024/proiect-inginerie-software-boddfba/blob/main/Images/Feature_development_roadmap.png)
+
 ## 3 - Non-functional requirements
 
 1. Performance: The game should maintain a consistent frame rate of at least 30 frames per second (FPS) on minimum system requirements. Loading times for maps and game assets should not be more than 10 seconds to ensure a seamless gaming experience.
