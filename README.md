@@ -66,28 +66,28 @@ Every player will have their predefined abilities and can scale up their power b
 ## 6 - A set of User Stories
 
 ### Game World:
-- As a new player, I want to explore the detailed main map to get a sense of the game's world and lore.
-- As a normal player, I want to anticipate and prepare for new challenges by knowing that 4-5 theme-based maps are in progress.
-- As a player, I want to encounter diverse monsters on each map to keep the gameplay engaging and unpredictable. 
-- As a dedicated player, I look forward to facing specific boss monsters on each map to test my skills and earn unique rewards.
+- As a new player, I want to explore the detailed main map so that I get a sense of the game's world and lore.
+- As a normal player, I know  that 4-5 theme-based maps are in progress so that I anticipate and prepare for new challenges.
+- As a player, I want to encounter diverse monsters on each map so that the gameplay is engaging and unpredictable. 
+- As a dedicated player, I look forward to facing specific boss monsters on each map so that I can test my skills and earn unique rewards.
 
 
 ### Character: 
-- As a new player, I want to choose my starting character to start my gaming experience. 
-- As a player, I expect smooth and realistic animations for my character to enhance my gameplay experience.
-- As a player, I look forward to the introduction of multiple character models, providing variety and allowing me to choose the one that suits my playstyle.
+- As a new player, I want to choose my starting character so that I can start my gaming experience. 
+- As a player, I expect smooth and realistic animations for my character so that my gameplay experience is enhanced.
+- As a player, I look forward to the introduction of multiple character model so that variety is provided and I get to choose the one that suits my playstyle.
 
 ### Abilities:
-- As a player, I want to experience the standard abilities with specific animations for my character, ensuring an engaging combat system. 
-- As an advanced player, I anticipate the addition of customized abilities for each character model, offering unique strategies and playstyles.
+- As a player, I want to experience the standard abilities with specific animations for my character so that an engaging combat system is ensured. 
+- As an advanced player, I anticipate the addition of customized abilities for each character model so that unique strategies and playstyles are offered.
 
 
 ### User Interface:
-- As a player, I expect a well-designed main menu that provides easy access to various game features.
+- As a player, I expect a well-designed main menu so that easy access to various game features is provided.
 
 ### Community:
-- As a social player, I look forward to the implementation of a chat system, allowing me to communicate with other players in real-time. 
-- As a player who values community, I want the ability to add friends in the game, fostering a sense of teamwork.
+- As a social player, I look forward to the implementation of a chat system so that it allows me to communicate with other players in real-time. 
+- As a player who values community, I want the ability to add friends in the game so that a sense of teamwork is fostered.
 
 
  ## 7 - Prioritized Product Backlog
