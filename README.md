@@ -12,15 +12,15 @@ Every player will have their predefined abilities and can scale up their power b
 
 ## 3 - Non-functional requirements
 
-1. Performance: The game should maintain a consistent frame rate of at least 30 frames per second (FPS) on minimum system requirements. Loading times for maps and game assets should be optimized to ensure a seamless gaming experience.
+1. Performance: The game should maintain a consistent frame rate of at least 30 frames per second (FPS) on minimum system requirements. Loading times for maps and game assets should not be more than 10 seconds to ensure a seamless gaming experience.
 
-2. Scalability: The game server should be scalable to accommodate a minimum of 50 concurrent players. The system should gracefully handle an increase in the number of maps and monsters without significant performance degradation.
+2. Scalability: The game server should be scalable to accommodate a minimum of 50 concurrent players. The system should gracefully handle 5 maps and around 50 monsters without significant performance degradation.
 
 3. Reliability: The game server should have a decent uptime over any given month. In case of server or connection failures, the game should be able to run on the user's local device offline.
 
-4. Maintainability: Implement version control for the game's source code to track changes and manage collaboration among developers.
+4. Maintainability: Implement version control for the game's source code every month to track changes and manage collaboration among developers.
 
-5. Compatibility: Ensure compatibility with a range of hardware configurations. Running on a Unity engine, the game should support multiple platforms (Windows, macOS, etc.) to broaden the player base.
+5. Compatibility: Ensure compatibility with a range of hardware configurations. Running on a Unity engine, the game should support Windows and macOS to broaden the player base.
 
 ## 4 - Customer Journey
 
