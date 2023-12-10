@@ -11,19 +11,31 @@ public class AnimationStateController : MonoBehaviour
     public float walkSpeed = 10.0f;
     private float seenRange = 100f;
     private float attackRange = 25f;
+    private float timeSinceAttackStarted = 0f;
+    [SerializeField]
+    private float momentOfDamageInAttackAnimation;
+    [SerializeField]
+    private float damageValuePerAttack;
+    private float attackAnimationClipLength;
+    private bool alreadyDamagedPlayerDuringThisAttack;
     public AudioSource deathSound;
 
     void Start()
     {
         //target = Camera.main.transform;
         animator = GetComponent<Animator>();
+        getAttackAnimationClipLength();
     }
 
     // Update is called once per frame
     void Update()
     {
         if(animator.GetBool("isDead") == false)
+        {
             FollowTarget();
+            DamagePlayer();
+        }
+
     }
 
     private void FollowTarget()
@@ -39,8 +51,15 @@ public class AnimationStateController : MonoBehaviour
 
         if (distance < attackRange)
         {
+            if (animator.GetBool("isAttacking") == false)
+            {
+                timeSinceAttackStarted = 0f;
+                alreadyDamagedPlayerDuringThisAttack = false;
+            }
+
             animator.SetBool("isWalking", false);
             animator.SetBool("isAttacking", true);
+
             return;
         }
         Vector3 direction = target.position - transform.position;
@@ -52,6 +71,38 @@ public class AnimationStateController : MonoBehaviour
         var lookRotation = Quaternion.LookRotation(direction);
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * rotationSpeed);
         transform.Translate(direction * walkSpeed * Time.deltaTime, Space.World);
+    }
+
+    private void DamagePlayer()
+    {
+        timeSinceAttackStarted += Time.deltaTime;
+
+        if(animator.GetBool("isAttacking") == true && timeSinceAttackStarted >= momentOfDamageInAttackAnimation && alreadyDamagedPlayerDuringThisAttack == false)
+        {
+            FindAnyObjectByType<PlayerStats>().changeHealth(-damageValuePerAttack);
+            alreadyDamagedPlayerDuringThisAttack = true;
+        }
+
+
+        if(timeSinceAttackStarted >= attackAnimationClipLength)
+        {
+            timeSinceAttackStarted = 0f;
+            alreadyDamagedPlayerDuringThisAttack = false;
+        }
+    }
+
+    private void getAttackAnimationClipLength()
+    {
+        AnimationClip[] clips = animator.runtimeAnimatorController.animationClips;
+        foreach (AnimationClip clip in clips)
+        {
+            switch (clip.name)
+            {
+                case "attack2":
+                    attackAnimationClipLength = clip.length;
+                    break;
+            }
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
