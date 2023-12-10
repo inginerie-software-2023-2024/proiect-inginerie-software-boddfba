@@ -6,12 +6,6 @@ using TMPro;
 
 public class Player_Inventory : MonoBehaviour
 {
-    [SerializeField]
-    Image infoSlotImage;     //the top image that shows the hovered item
-    [SerializeField]
-    TextMeshProUGUI hoveredItemName;
-    [SerializeField]
-    TextMeshProUGUI hoveredItemDescription;
     static int selectedInventorySlot;
     static GameObject playerInventoryHolder;
     [SerializeField]
@@ -25,9 +19,6 @@ public class Player_Inventory : MonoBehaviour
 
     void Awake()
     {
-        infoSlotImage.enabled = false;
-        hoveredItemName.enabled = false;
-        hoveredItemDescription.enabled = false;
         selectedInventorySlot = 0;
         playerInventoryHolder = playerInventoryHolderHelper;
     }
@@ -44,7 +35,7 @@ public class Player_Inventory : MonoBehaviour
 
     void selectInventorySlot()     //when you press a numeric key on keyboard it will select that slot in inventory bar
     {
-        for (int i = 1; i <= 2; i++)
+        for (int i = 1; i <= 3; i++)
             if (Input.GetKeyDown(keyCodes[i - 1]))
             {
                 selectedInventorySlot = i - 1;
@@ -52,24 +43,6 @@ public class Player_Inventory : MonoBehaviour
             }
     }
 
-    public void setHoveredItem(int itemCode)   //used to show the sprite, name and description for the hovered item
-    {
-        if (itemCode != 0)
-        {
-            infoSlotImage.enabled = true;
-            hoveredItemName.enabled = true;
-            hoveredItemDescription.enabled = true;
-            infoSlotImage.sprite = ItemsList.getSprite(itemCode);
-            hoveredItemName.text = ItemsList.getName(itemCode);
-            hoveredItemDescription.text = ItemsList.getDescription(itemCode);
-        }
-        else
-        {
-            infoSlotImage.enabled = false;
-            hoveredItemName.enabled = false;
-            hoveredItemDescription.enabled = false;
-        }
-    }
     public static int getSelectedSlot()
     {
         return selectedInventorySlot;

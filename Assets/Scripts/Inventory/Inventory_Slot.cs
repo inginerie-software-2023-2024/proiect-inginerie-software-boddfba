@@ -5,16 +5,12 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using TMPro;
 
-public class Inventory_Slot : MonoBehaviour, IPointerDownHandler, IDropHandler, IDragHandler, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
+public class Inventory_Slot : MonoBehaviour, IPointerDownHandler, IDropHandler, IDragHandler, IPointerClickHandler, IPointerEnterHandler
 {
     [SerializeField]
     Image itemImage;
     [SerializeField]
     TextMeshProUGUI quantityText;
-    [SerializeField]
-    Image chargeImage;
-    [SerializeField]
-    Image chargeImageBackground;
     [SerializeField]
     Image outline;
     [SerializeField]
@@ -24,8 +20,6 @@ public class Inventory_Slot : MonoBehaviour, IPointerDownHandler, IDropHandler, 
     {
         itemImage.gameObject.SetActive(false);
         quantityText.gameObject.SetActive(false);
-        chargeImage.gameObject.SetActive(false);
-        chargeImageBackground.gameObject.SetActive(false);
         getInventoryHolder().GetComponent<Inventory>().onInventoryChange += onChange;
         onChange();
 
@@ -46,24 +40,11 @@ public class Inventory_Slot : MonoBehaviour, IPointerDownHandler, IDropHandler, 
             itemImage.sprite = ItemsList.getSprite(itemCode);
             quantityText.gameObject.SetActive(true);
             quantityText.text = getInventoryHolder().GetComponent<Inventory>().getQuantity(slot).ToString();
-
-            if (Item.checkChargeableItem(itemCode))
-            {
-                chargeImage.gameObject.SetActive(true);
-                chargeImageBackground.gameObject.SetActive(true);
-            }
-            else
-            {
-                chargeImage.gameObject.SetActive(false);
-                chargeImageBackground.gameObject.SetActive(false);
-            }
         }
         else
         {
             itemImage.gameObject.SetActive(false);
             quantityText.gameObject.SetActive(false);
-            chargeImage.gameObject.SetActive(false);
-            chargeImageBackground.gameObject.SetActive(false);
         }
     }
 
@@ -100,12 +81,6 @@ public class Inventory_Slot : MonoBehaviour, IPointerDownHandler, IDropHandler, 
     public void OnPointerEnter(PointerEventData eventData)    //used for info slot image
     {
         int itemCode = getInventoryHolder().GetComponent<Inventory>().getItemCode(slot);
-        FindObjectOfType<Player_Inventory>().setHoveredItem(itemCode);
-    }
-
-    public void OnPointerExit(PointerEventData eventData)    //used for info slot image
-    {
-        FindObjectOfType<Player_Inventory>().setHoveredItem(0);
     }
 
     public void OnDrag(PointerEventData eventData)     //if we don't have this the start and end drag don't work; idk why
