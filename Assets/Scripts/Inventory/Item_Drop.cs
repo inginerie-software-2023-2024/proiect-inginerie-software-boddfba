@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Item_Drop : MonoBehaviour
 {
-    [SerializeField]
+   /* [SerializeField]
     GameObject boxPrefab;
     GraphicRaycaster myRaycaster;
     PointerEventData myPointerEventData;
@@ -66,5 +66,5 @@ public class Item_Drop : MonoBehaviour
         int[] quantityArray = new int[] { quantity };
         float[] chargeArray = new float[] { charge };
         box.gameObject.GetComponent<ResourcesData>().setResourceData(itemCodeArray, quantityArray, chargeArray);
-    }
+    }*/
 }
