@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using TMPro;
 
-public class Inventory_Slot : MonoBehaviour, IPointerDownHandler, IDropHandler, IDragHandler, IPointerClickHandler, IPointerEnterHandler
+public class Inventory_Slot : MonoBehaviour, IPointerDownHandler, IDropHandler, IDragHandler, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
     [SerializeField]
     Image itemImage;
@@ -50,6 +50,9 @@ public class Inventory_Slot : MonoBehaviour, IPointerDownHandler, IDropHandler, 
 
     public void OnPointerDown(PointerEventData eventData)
     {
+        if (Inventory_Panel.getInventoryStatus().Equals("CLOSED"))
+            return;
+
         int itemCode = getInventoryHolder().GetComponent<Inventory>().getItemCode(slot);
         int quantity = 0;
 
@@ -63,6 +66,8 @@ public class Inventory_Slot : MonoBehaviour, IPointerDownHandler, IDropHandler, 
 
     public void OnDrop(PointerEventData eventData)     //when the drag ends
     {
+        if (Inventory_Panel.getInventoryStatus().Equals("CLOSED"))
+            return;
 
         int itemCode = getInventoryHolder().GetComponent<Inventory>().getItemCode(slot);
         int quantity = getInventoryHolder().GetComponent<Inventory>().getQuantity(slot);
@@ -72,6 +77,9 @@ public class Inventory_Slot : MonoBehaviour, IPointerDownHandler, IDropHandler, 
 
     public void OnPointerClick(PointerEventData eventData)     //in case a slot is just clicked but without any darg
     {
+        if (Inventory_Panel.getInventoryStatus().Equals("CLOSED"))
+            return;
+
         int itemCode = getInventoryHolder().GetComponent<Inventory>().getItemCode(slot);
         int quantity = getInventoryHolder().GetComponent<Inventory>().getQuantity(slot);
 
@@ -81,6 +89,12 @@ public class Inventory_Slot : MonoBehaviour, IPointerDownHandler, IDropHandler, 
     public void OnPointerEnter(PointerEventData eventData)    //used for info slot image
     {
         int itemCode = getInventoryHolder().GetComponent<Inventory>().getItemCode(slot);
+        FindObjectOfType<Player_Inventory>().setHoveredItem(itemCode);
+    }
+
+    public void OnPointerExit(PointerEventData eventData)    //used for info slot image
+    {
+        FindObjectOfType<Player_Inventory>().setHoveredItem(0);
     }
 
     public void OnDrag(PointerEventData eventData)     //if we don't have this the start and end drag don't work; idk why

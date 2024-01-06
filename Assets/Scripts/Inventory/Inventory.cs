@@ -11,9 +11,9 @@ public class Inventory : MonoBehaviour
     public delegate void OnInventoryChange();
     public OnInventoryChange onInventoryChange;
 
-    void Awake()
+    void Awake() //we need awake because if we use start onChange() from Inventory_Slot will be assigned to onInventoryChange vefore checkEmpty
     {
-
+        onInventoryChange += checkEmpty;
     }
 
     public int addItem(int itemCode, int quantity)
@@ -151,5 +151,13 @@ public class Inventory : MonoBehaviour
     void OnDestroy()
     {
         onInventoryChange -= checkEmpty;
+    }
+
+    public void loadData(int[] itemCodeArray, int[] quantityArray, float[] chargeArray) //this is called by the invenyory "manager" loadData; for player inventory manager by Player_Inventory, for chest by chest script etc
+    {
+        this.itemCodeArray = itemCodeArray;
+        this.quantityArray = quantityArray;
+
+        onInventoryChange();
     }
 }
