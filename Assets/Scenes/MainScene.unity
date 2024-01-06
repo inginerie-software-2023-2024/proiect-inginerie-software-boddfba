@@ -2894,7 +2894,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!65 &480527636
 BoxCollider:
@@ -2935,6 +2935,8 @@ MonoBehaviour:
   momentOfDamageInAttackAnimation: 0.5
   damageValuePerAttack: 5
   deathSound: {fileID: 1208458055}
+  itemCodePlayerGetsWhenKilled: 1
+  itemQuantityPlayerGetsWhenKilled: 1
 --- !u!1 &491860265 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: c8613c4386020e1488921bef86c236e8, type: 3}
@@ -4931,7 +4933,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!65 &847255728
 BoxCollider:
@@ -4969,9 +4971,11 @@ MonoBehaviour:
   target: {fileID: 491860266}
   rotationSpeed: 5
   walkSpeed: 10
-  momentOfDamageInAttackAnimation: 0
-  damageValuePerAttack: 0
+  momentOfDamageInAttackAnimation: 0.5
+  damageValuePerAttack: 5
   deathSound: {fileID: 1208458055}
+  itemCodePlayerGetsWhenKilled: 1
+  itemQuantityPlayerGetsWhenKilled: 1
 --- !u!1 &854410922
 GameObject:
   m_ObjectHideFlags: 3
@@ -5160,6 +5164,7 @@ GameObject:
   m_Component:
   - component: {fileID: 870243963}
   - component: {fileID: 870243964}
+  - component: {fileID: 870243965}
   m_Layer: 0
   m_Name: Item-Scripts
   m_TagString: Untagged
@@ -5207,6 +5212,20 @@ MonoBehaviour:
   - Test description
   - Good when you are hungry
   inventoryLimitHelper: 000000001400000014000000
+--- !u!114 &870243965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 870243962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: befabae5880de8441af64921a61a13e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemCode: 1
+  healthIncrease: 20
 --- !u!1 &876696897 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100010, guid: 0b5dafda84353d24281ce891b1ee70b9, type: 3}
@@ -5242,7 +5261,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!65 &876696900
 BoxCollider:
@@ -5280,9 +5299,11 @@ MonoBehaviour:
   target: {fileID: 491860266}
   rotationSpeed: 5
   walkSpeed: 10
-  momentOfDamageInAttackAnimation: 0
-  damageValuePerAttack: 0
+  momentOfDamageInAttackAnimation: 0.5
+  damageValuePerAttack: 5
   deathSound: {fileID: 1208458055}
+  itemCodePlayerGetsWhenKilled: 1
+  itemQuantityPlayerGetsWhenKilled: 1
 --- !u!1 &884555100
 GameObject:
   m_ObjectHideFlags: 0
@@ -7921,9 +7942,11 @@ MonoBehaviour:
   target: {fileID: 491860266}
   rotationSpeed: 5
   walkSpeed: 10
-  momentOfDamageInAttackAnimation: 0
-  damageValuePerAttack: 0
+  momentOfDamageInAttackAnimation: 0.5
+  damageValuePerAttack: 5
   deathSound: {fileID: 1208458055}
+  itemCodePlayerGetsWhenKilled: 1
+  itemQuantityPlayerGetsWhenKilled: 1
 --- !u!64 &1386961720
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -7997,7 +8020,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!1 &1393410071 stripped
 GameObject:
@@ -8022,6 +8045,8 @@ MonoBehaviour:
   momentOfDamageInAttackAnimation: 0.5
   damageValuePerAttack: 5
   deathSound: {fileID: 1208458055}
+  itemCodePlayerGetsWhenKilled: 1
+  itemQuantityPlayerGetsWhenKilled: 1
 --- !u!4 &1393410079 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400010, guid: 0b5dafda84353d24281ce891b1ee70b9, type: 3}
@@ -8073,7 +8098,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!1001 &1410651794
 PrefabInstance:
@@ -9334,7 +9359,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!65 &1772612153
 BoxCollider:
@@ -9372,9 +9397,11 @@ MonoBehaviour:
   target: {fileID: 491860266}
   rotationSpeed: 5
   walkSpeed: 10
-  momentOfDamageInAttackAnimation: 0
-  damageValuePerAttack: 0
+  momentOfDamageInAttackAnimation: 0.5
+  damageValuePerAttack: 5
   deathSound: {fileID: 1208458055}
+  itemCodePlayerGetsWhenKilled: 1
+  itemQuantityPlayerGetsWhenKilled: 1
 --- !u!1 &1773430195
 GameObject:
   m_ObjectHideFlags: 0
@@ -10210,6 +10237,8 @@ MonoBehaviour:
   momentOfDamageInAttackAnimation: 0
   damageValuePerAttack: 0
   deathSound: {fileID: 0}
+  itemCodePlayerGetsWhenKilled: 0
+  itemQuantityPlayerGetsWhenKilled: 0
 --- !u!64 &1875897930
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -10606,6 +10635,8 @@ MonoBehaviour:
   momentOfDamageInAttackAnimation: 0.5
   damageValuePerAttack: 5
   deathSound: {fileID: 1208458055}
+  itemCodePlayerGetsWhenKilled: 1
+  itemQuantityPlayerGetsWhenKilled: 1
 --- !u!4 &1922739171 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400010, guid: 0b5dafda84353d24281ce891b1ee70b9, type: 3}
@@ -10657,7 +10688,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!1001 &1936902868
 PrefabInstance:
