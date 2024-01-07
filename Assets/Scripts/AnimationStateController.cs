@@ -19,12 +19,19 @@ public class AnimationStateController : MonoBehaviour
     private float attackAnimationClipLength;
     private bool alreadyDamagedPlayerDuringThisAttack;
     public AudioSource deathSound;
+    [SerializeField]
+    private int itemCodePlayerGetsWhenKilled;
+    [SerializeField]
+    private int itemQuantityPlayerGetsWhenKilled;
 
     void Start()
     {
         //target = Camera.main.transform;
         animator = GetComponent<Animator>();
         getAttackAnimationClipLength();
+        animator.SetBool("isWalking", true);
+        animator.SetBool("isDead", false);
+        animator.SetBool("isAttacking", false);
     }
 
     // Update is called once per frame
@@ -111,6 +118,7 @@ public class AnimationStateController : MonoBehaviour
         {
             animator.SetBool("isDead", true);
             StartCoroutine(PlayDeathSoundWithDelay(0.7f));
+            FindAnyObjectByType<Inventory>().addItem(itemCodePlayerGetsWhenKilled, itemQuantityPlayerGetsWhenKilled);
         }
     }
     private IEnumerator PlayDeathSoundWithDelay(float delay)
