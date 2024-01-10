@@ -118,6 +118,7 @@ public class AnimationStateController : MonoBehaviour
         {
 
             animator.SetBool("isDead", true);
+            Debug.Log("Coleziune lup");
             
             StartCoroutine(PlayDeathSoundWithDelay(0.7f));
             FindAnyObjectByType<Inventory>().addItem(itemCodePlayerGetsWhenKilled, itemQuantityPlayerGetsWhenKilled);
