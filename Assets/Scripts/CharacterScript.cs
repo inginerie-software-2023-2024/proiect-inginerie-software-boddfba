@@ -11,6 +11,19 @@ public class CharacterScript : MonoBehaviour
     private bool isMartelo = false;
     private bool isHook = false;
     private CharacterController characterController;
+    public DragonExample dragonExample;
+    public DemonMovement demon;
+    public DemonMovement demon1;
+    public DemonMovement demon2;
+    public DemonMovement demon3;
+    public DemonMovement demon4;
+    public DemonMovement demon5;
+    public DemonMovement demon6;
+    public DemonMovement demon7;
+    public DemonMovement demon8;
+    public DemonMovement demon9;
+    public DemonMovement demon10;
+    public DemonMovement demon11;
 
     void Start()
     {
@@ -41,7 +54,22 @@ public class CharacterScript : MonoBehaviour
 
         // Check for different attack animations
         if (Input.GetKeyDown(KeyCode.Q))
+        {
             isAttacking = true;
+            dragonExample.playerIsAttacking = true;
+            demon.playerIsAttackingNPC = true;
+            demon1.playerIsAttackingNPC = true;
+            demon2.playerIsAttackingNPC = true;
+            demon3.playerIsAttackingNPC = true;
+            demon4.playerIsAttackingNPC = true;
+            demon5.playerIsAttackingNPC = true;
+            demon6.playerIsAttackingNPC = true;
+            demon7.playerIsAttackingNPC = true;
+            demon8.playerIsAttackingNPC = true;
+            demon9.playerIsAttackingNPC = true;
+            demon10.playerIsAttackingNPC = true;
+            demon11.playerIsAttackingNPC = true;
+        }
 
         if (Input.GetKeyDown(KeyCode.Alpha2))
             is360 = true;
@@ -73,8 +101,23 @@ public class CharacterScript : MonoBehaviour
         animator.SetBool("isHook", isHook);
 
         // Reset the attack flags when the corresponding key is released
-        if (!Input.GetKey(KeyCode.Q))
-            isAttacking = false;
+        if (!Input.GetKey(KeyCode.Q)) {
+        isAttacking = false;
+        dragonExample.playerIsAttacking = false;
+            demon.playerIsAttackingNPC = false;
+            demon1.playerIsAttackingNPC = false;
+            demon2.playerIsAttackingNPC =false;
+            demon3.playerIsAttackingNPC = false;
+            demon4.playerIsAttackingNPC = false;
+            demon5.playerIsAttackingNPC = false;
+            demon6.playerIsAttackingNPC = false;
+            demon7.playerIsAttackingNPC = false;
+            demon8.playerIsAttackingNPC = false;
+            demon9.playerIsAttackingNPC = false;
+            demon10.playerIsAttackingNPC = false;
+            demon11.playerIsAttackingNPC = false;
+        }
+
 
         if (!Input.GetKey(KeyCode.Alpha2))
             is360 = false;

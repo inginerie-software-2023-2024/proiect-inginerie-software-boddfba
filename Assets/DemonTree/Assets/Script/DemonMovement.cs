@@ -7,7 +7,6 @@ public class DemonMovement : MonoBehaviour
     int hIdles;
     int hAngry;
     int hAttack;
-    int hGrabs;
     int hThumbsUp;
     public Transform target;
     private float seenRange = 100f;
@@ -26,6 +25,8 @@ public class DemonMovement : MonoBehaviour
     private float timeSinceAttackStarted = 0f;
     private bool alreadyDamagedPlayerDuringThisAttack;
     private float attackAnimationClipLength;
+    [SerializeField]
+    public bool playerIsAttackingNPC;
 
     // Use this for initialization
     void Start()
@@ -34,7 +35,6 @@ public class DemonMovement : MonoBehaviour
         hIdles = Animator.StringToHash("Idles");
         hAngry = Animator.StringToHash("Angry");
         hAttack = Animator.StringToHash("Attack");
-        hGrabs = Animator.StringToHash("Grabs");
         hThumbsUp = Animator.StringToHash("ThumbsUp");
 
         getAttackAnimationClipLength();
@@ -96,7 +96,7 @@ public class DemonMovement : MonoBehaviour
         {
             FindAnyObjectByType<PlayerStats>().changeHealth(-damageValuePerAttack);
             alreadyDamagedPlayerDuringThisAttack = true;
-            Debug.Log("Attack");
+            
         }
 
         if (timeSinceAttackStarted >= attackAnimationClipLength)
@@ -108,10 +108,9 @@ public class DemonMovement : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("Detectare coleziune");
-        if (collision.gameObject.CompareTag("Axe"))
+        if (collision.gameObject.CompareTag("Axe") && playerIsAttackingNPC == true && isDead == false)
         {
-            Debug.Log("COLEZIUNEEE Axe");
+            Debug.Log("Lovit NPC");
 
             anim.SetBool(hIdles, false);
             anim.SetBool(hAngry, false);
@@ -120,6 +119,7 @@ public class DemonMovement : MonoBehaviour
             isDead = true;
 
             FindAnyObjectByType<Inventory>().addItem(itemCodePlayerGetsWhenKilled, itemQuantityPlayerGetsWhenKilled);
+            return;
         }
     }
 
