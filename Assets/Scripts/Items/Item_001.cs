@@ -10,7 +10,7 @@ public class Item_001 : Item
     {
         if (itemCode == selectedItemCode)
         {
-            if (Input.GetKeyDown(KeyCode.Mouse0))
+            if (Input.GetKeyDown(KeyCode.Mouse1) && Inventory_Panel.getInventoryStatus() == "CLOSED")
                 consume();
         }
     }

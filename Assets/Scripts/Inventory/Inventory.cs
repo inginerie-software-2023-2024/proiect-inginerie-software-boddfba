@@ -153,10 +153,22 @@ public class Inventory : MonoBehaviour
         onInventoryChange -= checkEmpty;
     }
 
-    public void loadData(int[] itemCodeArray, int[] quantityArray, float[] chargeArray) //this is called by the invenyory "manager" loadData; for player inventory manager by Player_Inventory, for chest by chest script etc
+    public void saveData()
     {
-        this.itemCodeArray = itemCodeArray;
-        this.quantityArray = quantityArray;
+        for (int i = 0; i < itemCodeArray.Length; i++)
+        {
+            PlayerPrefs.SetInt("Inventory_Item_Code_" + i, itemCodeArray[i]);
+            PlayerPrefs.SetInt("Inventory_Item_Quantity_" + i, quantityArray[i]);
+        }
+    }
+
+    public void loadDat() 
+    {
+        for (int i = 0; i < itemCodeArray.Length; i++)
+        {
+            itemCodeArray[i] = PlayerPrefs.GetInt("Inventory_Item_Code_" + i, 0);
+            quantityArray[i] = PlayerPrefs.GetInt("Inventory_Item_Quantity_" + i, 0);
+        }
 
         onInventoryChange();
     }
