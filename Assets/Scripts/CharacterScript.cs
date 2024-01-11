@@ -40,7 +40,7 @@ public class CharacterScript : MonoBehaviour
         animator.SetBool("isWalking", verticalInput != 0);
 
         // Check for different attack animations
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (Input.GetKeyDown(KeyCode.Q))
             isAttacking = true;
 
         if (Input.GetKeyDown(KeyCode.Alpha2))
@@ -73,7 +73,7 @@ public class CharacterScript : MonoBehaviour
         animator.SetBool("isHook", isHook);
 
         // Reset the attack flags when the corresponding key is released
-        if (!Input.GetKey(KeyCode.Alpha1))
+        if (!Input.GetKey(KeyCode.Q))
             isAttacking = false;
 
         if (!Input.GetKey(KeyCode.Alpha2))
