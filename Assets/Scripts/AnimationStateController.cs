@@ -10,7 +10,7 @@ public class AnimationStateController : MonoBehaviour
     public float rotationSpeed = 5f;
     public float walkSpeed = 10.0f;
     private float seenRange = 100f;
-    private float attackRange = 25f;
+    public float attackRange = 25f;
     public AudioSource deathSound;
 
     void Start()
@@ -29,7 +29,7 @@ public class AnimationStateController : MonoBehaviour
     private void FollowTarget()
     {
         var distance = Vector3.Distance(transform.position, target.position);
-        //Debug.Log("Distance: " + distance);
+        Debug.Log("Distance: " + distance);
         if (distance > seenRange)
         {
             animator.SetBool("isWalking", false);
