@@ -29,7 +29,7 @@ public class AnimationStateController : MonoBehaviour
     private void FollowTarget()
     {
         var distance = Vector3.Distance(transform.position, target.position);
-        Debug.Log("Distance: " + distance);
+        //Debug.Log("Distance: " + distance);
         if (distance > seenRange)
         {
             animator.SetBool("isWalking", false);
