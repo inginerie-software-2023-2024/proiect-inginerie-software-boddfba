@@ -1,6 +1,7 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerStats : MonoBehaviour
@@ -38,12 +39,17 @@ public class PlayerStats : MonoBehaviour
     {
         health += healthChange;
         if (health < 0)
-            health = 0;
+            Die();
         else if (health > 100)
             health = 100;
 
 
         healthFill.fillAmount = health / 100;
+    }
+    public void Die()
+    {
+        Debug.Log("You are dead!");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void setHealth(float healthChange)

@@ -97,7 +97,8 @@ public class DragonExample : MonoBehaviour
           {
               FindAnyObjectByType<PlayerStats>().changeHealth(-damageValuePerAttack);
               alreadyDamagedPlayerDuringThisAttack = true;
-            Debug.Log("Attack");
+            Debug.Log("Attack DRAGON");
+
         }
 
           if (timeSinceAttackStarted >= attackAnimationClipLength)
@@ -136,7 +137,7 @@ public class DragonExample : MonoBehaviour
         {
             switch (clip.name)
             {
-                case "Attack":
+                case "Bite":
                     attackAnimationClipLength = clip.length;
                     break;
             }
