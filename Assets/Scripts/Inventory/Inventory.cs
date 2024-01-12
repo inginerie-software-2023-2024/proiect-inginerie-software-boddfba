@@ -162,7 +162,7 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    public void loadDat() 
+    public void loadData() 
     {
         for (int i = 0; i < itemCodeArray.Length; i++)
         {
@@ -171,5 +171,21 @@ public class Inventory : MonoBehaviour
         }
 
         onInventoryChange();
+    }
+
+    public bool verifyItemsExistence(int[] itemCodeArrayToCheck, int[] quantityArrayToCheck)
+    {
+        for(int i = 0; i < itemCodeArrayToCheck.Length; i++)
+        {
+            int foundQuantity = 0;
+            for (int j = 0; j < itemCodeArray.Length; j++)
+                if (itemCodeArray[j] == itemCodeArrayToCheck[i])
+                    foundQuantity += quantityArray[j];
+
+            if (foundQuantity < quantityArrayToCheck[i])
+                return false;
+        }
+
+        return true;
     }
 }
