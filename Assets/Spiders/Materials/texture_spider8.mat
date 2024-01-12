@@ -13,14 +13,20 @@ Material:
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
 <<<<<<< HEAD
+<<<<<<< HEAD
   - _NORMALMAP
   m_InvalidKeywords: []
   m_LightmapFlags: 5
 =======
+=======
+>>>>>>> main
   - _EMISSION
   - _NORMALMAP
   m_InvalidKeywords: []
   m_LightmapFlags: 1
+<<<<<<< HEAD
+>>>>>>> main
+=======
 >>>>>>> main
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -78,7 +84,13 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
     - _Glossiness: 0.5
+=======
+    - _GlossMapScale: 1
+    - _Glossiness: 0.5
+    - _GlossyReflections: 1
+>>>>>>> main
 =======
     - _GlossMapScale: 1
     - _Glossiness: 0.5
@@ -90,6 +102,11 @@ Material:
     - _Parallax: 0.02
     - _Shininess: 0.078125
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    - _SmoothnessTextureChannel: 0
+    - _SpecularHighlights: 1
+>>>>>>> main
 =======
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
