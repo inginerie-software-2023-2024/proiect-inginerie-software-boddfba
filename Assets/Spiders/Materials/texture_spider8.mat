@@ -14,10 +14,13 @@ Material:
   m_ValidKeywords:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   - _NORMALMAP
   m_InvalidKeywords: []
   m_LightmapFlags: 5
 =======
+=======
+>>>>>>> main
 =======
 >>>>>>> main
   - _EMISSION
@@ -25,6 +28,9 @@ Material:
   m_InvalidKeywords: []
   m_LightmapFlags: 1
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> main
+=======
 >>>>>>> main
 =======
 >>>>>>> main
@@ -85,7 +91,13 @@ Material:
     - _DstBlend: 0
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     - _Glossiness: 0.5
+=======
+    - _GlossMapScale: 1
+    - _Glossiness: 0.5
+    - _GlossyReflections: 1
+>>>>>>> main
 =======
     - _GlossMapScale: 1
     - _Glossiness: 0.5
@@ -103,6 +115,11 @@ Material:
     - _Shininess: 0.078125
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    - _SmoothnessTextureChannel: 0
+    - _SpecularHighlights: 1
+>>>>>>> main
 =======
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1

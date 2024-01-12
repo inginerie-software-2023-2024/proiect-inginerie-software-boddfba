@@ -119,9 +119,14 @@ public class AnimationStateController : MonoBehaviour
         {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
             animator.SetBool("isDead", true);
 
+=======
+            
+            animator.SetBool("isDead", true);
+>>>>>>> main
 =======
             
             animator.SetBool("isDead", true);
