@@ -114,12 +114,12 @@ public class AnimationStateController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Axe"))
+        if (collision.gameObject.CompareTag("Axe") )
         {
 
             animator.SetBool("isDead", true);
-            Debug.Log("Coleziune lup");
-            
+
+           
             StartCoroutine(PlayDeathSoundWithDelay(0.7f));
             FindAnyObjectByType<Inventory>().addItem(itemCodePlayerGetsWhenKilled, itemQuantityPlayerGetsWhenKilled);
         }
