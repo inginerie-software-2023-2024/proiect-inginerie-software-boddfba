@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4366757, g: 0.48427194, b: 0.5645252, a: 1}
+  m_IndirectSpecularColor: {r: 0.43667564, g: 0.48427135, b: 0.5645232, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5248,17 +5248,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteArrayHelper:
   - {fileID: 0}
-  - {fileID: 21300000, guid: 6f459da9298fcc744a2e7d11c2964682, type: 3}
   - {fileID: 21300000, guid: ef526f61b023ccf468ffca389b2059d2, type: 3}
+  - {fileID: 21300000, guid: a0adfc2dd3325fd4dbe8adfad86e7260, type: 3}
+  - {fileID: 21300000, guid: 4ca352003c623494d9d50309a7c885c2, type: 3}
+  - {fileID: 21300000, guid: 75e8585518097c24ab7146c0a641e5ca, type: 3}
   nameArrayHelper:
   - 
-  - Test
   - Patato
+  - Lava Diamond
+  - Sand Crystal
+  - Ice Diamond
   descriptionArrayHelper:
   - 
-  - Test description
-  - Good when you are hungry
-  inventoryLimitHelper: 000000001400000014000000
+  - Increases your health
+  - A diamond forged from the lava of the haunted moutain
+  - A crystal crafted from the clearest grains of sand found in the desert
+  - An ice forged in the shape of a pretious stone
+  inventoryLimitHelper: 0000000001000000010000000100000014000000
 --- !u!114 &870243965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11518,8 +11524,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 098ee61c846360f41ba14c841167345a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemCodeArray: 0100000002000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-  quantityArray: 050000000e000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  itemCodeArray: 0100000002000000030000000400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  quantityArray: 0500000001000000010000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
 --- !u!224 &2106782678 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7756507930865361879, guid: bba8d37065e874e499f21c2d1609791a, type: 3}
@@ -11662,11 +11668,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2719741434848807717, guid: f099ea7416967584382b61b8c01d3f93, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 430
       objectReference: {fileID: 0}
     - target: {fileID: 2719741434848807717, guid: f099ea7416967584382b61b8c01d3f93, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 2719741434848807717, guid: f099ea7416967584382b61b8c01d3f93, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -11679,6 +11685,10 @@ PrefabInstance:
     - target: {fileID: 2719741434848807717, guid: f099ea7416967584382b61b8c01d3f93, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4572623016243082526, guid: f099ea7416967584382b61b8c01d3f93, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -705
       objectReference: {fileID: 0}
     - target: {fileID: 4572623016243082526, guid: f099ea7416967584382b61b8c01d3f93, type: 3}
       propertyPath: m_AnchoredPosition.y

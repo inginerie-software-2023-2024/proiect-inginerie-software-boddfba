@@ -23,6 +23,7 @@ public class AnimationStateController : MonoBehaviour
     private int itemCodePlayerGetsWhenKilled;
     [SerializeField]
     private int itemQuantityPlayerGetsWhenKilled;
+    private bool alreadyDroppedItem = false;
 
     void Start()
     {
@@ -116,12 +117,21 @@ public class AnimationStateController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Axe") )
         {
+<<<<<<< HEAD
 
             animator.SetBool("isDead", true);
 
+=======
+            
+            animator.SetBool("isDead", true);
+>>>>>>> main
            
             StartCoroutine(PlayDeathSoundWithDelay(0.7f));
-            FindAnyObjectByType<Inventory>().addItem(itemCodePlayerGetsWhenKilled, itemQuantityPlayerGetsWhenKilled);
+            if(alreadyDroppedItem == false)
+            {
+                FindAnyObjectByType<Inventory>().addItem(itemCodePlayerGetsWhenKilled, itemQuantityPlayerGetsWhenKilled);
+                alreadyDroppedItem = true;
+            }
         }
     }
     private IEnumerator PlayDeathSoundWithDelay(float delay)
