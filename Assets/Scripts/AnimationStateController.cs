@@ -117,7 +117,6 @@ public class AnimationStateController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Axe") )
         {
-            
             animator.SetBool("isDead", true);
            
             StartCoroutine(PlayDeathSoundWithDelay(0.7f));
