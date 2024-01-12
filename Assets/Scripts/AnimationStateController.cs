@@ -117,24 +117,7 @@ public class AnimationStateController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Axe") )
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-
             animator.SetBool("isDead", true);
-
-=======
-            
-            animator.SetBool("isDead", true);
->>>>>>> main
-=======
-            
-            animator.SetBool("isDead", true);
->>>>>>> main
-=======
-            
-            animator.SetBool("isDead", true);
->>>>>>> main
            
             StartCoroutine(PlayDeathSoundWithDelay(0.7f));
             if(alreadyDroppedItem == false)

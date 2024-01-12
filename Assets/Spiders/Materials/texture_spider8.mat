@@ -12,28 +12,10 @@ Material:
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
   - _NORMALMAP
   m_InvalidKeywords: []
   m_LightmapFlags: 5
-=======
-=======
->>>>>>> main
-=======
->>>>>>> main
-  - _EMISSION
-  - _NORMALMAP
-  m_InvalidKeywords: []
-  m_LightmapFlags: 1
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> main
-=======
->>>>>>> main
-=======
->>>>>>> main
+
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
@@ -89,45 +71,19 @@ Material:
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-    - _Glossiness: 0.5
-=======
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
->>>>>>> main
-=======
-    - _GlossMapScale: 1
-    - _Glossiness: 0.5
-    - _GlossyReflections: 1
->>>>>>> main
-=======
-    - _GlossMapScale: 1
-    - _Glossiness: 0.5
-    - _GlossyReflections: 1
->>>>>>> main
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _Shininess: 0.078125
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
+
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
->>>>>>> main
-=======
-    - _SmoothnessTextureChannel: 0
-    - _SpecularHighlights: 1
->>>>>>> main
-=======
-    - _SmoothnessTextureChannel: 0
-    - _SpecularHighlights: 1
->>>>>>> main
+
+
     - _SrcBlend: 1
     - _UVSec: 0
     - _ZWrite: 1
