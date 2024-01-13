@@ -38,7 +38,7 @@ public class AnimationStateController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(animator.GetBool("isDead") == false)
+        if (animator.GetBool("isDead") == false)
         {
             FollowTarget();
             DamagePlayer();
@@ -85,14 +85,14 @@ public class AnimationStateController : MonoBehaviour
     {
         timeSinceAttackStarted += Time.deltaTime;
 
-        if(animator.GetBool("isAttacking") == true && timeSinceAttackStarted >= momentOfDamageInAttackAnimation && alreadyDamagedPlayerDuringThisAttack == false)
+        if (animator.GetBool("isAttacking") == true && timeSinceAttackStarted >= momentOfDamageInAttackAnimation && alreadyDamagedPlayerDuringThisAttack == false)
         {
             FindAnyObjectByType<PlayerStats>().changeHealth(-damageValuePerAttack);
             alreadyDamagedPlayerDuringThisAttack = true;
         }
 
 
-        if(timeSinceAttackStarted >= attackAnimationClipLength)
+        if (timeSinceAttackStarted >= attackAnimationClipLength)
         {
             timeSinceAttackStarted = 0f;
             alreadyDamagedPlayerDuringThisAttack = false;
@@ -115,12 +115,12 @@ public class AnimationStateController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Axe") )
+        if (collision.gameObject.CompareTag("Axe"))
         {
             animator.SetBool("isDead", true);
-           
+
             StartCoroutine(PlayDeathSoundWithDelay(0.7f));
-            if(alreadyDroppedItem == false)
+            if (alreadyDroppedItem == false)
             {
                 FindAnyObjectByType<Inventory>().addItem(itemCodePlayerGetsWhenKilled, itemQuantityPlayerGetsWhenKilled);
                 alreadyDroppedItem = true;
