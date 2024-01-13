@@ -1,4 +1,5 @@
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CharacterScript : MonoBehaviour
 {
@@ -36,6 +37,11 @@ public class CharacterScript : MonoBehaviour
         float horizontalInput = 0f;
         float verticalInput = 0f;
 
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            // Încarcă scena meniu (în cazul tău, ar putea fi "MenuScene")
+            SceneManager.LoadScene("Menu");
+        }
         // Detect movement input from WASD keys
         if (Input.GetKey(KeyCode.W))
             verticalInput = 1f;

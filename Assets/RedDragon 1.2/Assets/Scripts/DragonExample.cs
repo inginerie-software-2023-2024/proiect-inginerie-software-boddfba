@@ -12,6 +12,8 @@ public class DragonExample : MonoBehaviour
     public Transform target;
     private float seenRange = 100f;
     public bool isDead = false;
+    public float walkSpeed = 10.0f;
+    public float rotationSpeed = 5f;
     private float attackRange = 25f;
     [SerializeField]
     private float momentOfDamageInAttackAnimation;
@@ -85,6 +87,10 @@ public class DragonExample : MonoBehaviour
         Vector3 direction = target.position - transform.position;
         direction.Normalize();
         direction.y = 0;
+
+        var lookRotation = Quaternion.LookRotation(direction);
+        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * rotationSpeed);
+        transform.Translate(direction * walkSpeed * Time.deltaTime, Space.World);
     }
 
 

@@ -251,7 +251,7 @@ ModelImporter:
     second: Object01
   - first:
       74: 7400000
-    second: Attack
+    second: attack2
   - first:
       95: 9500000
     second: //RootNode
@@ -291,7 +291,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Attack
+      name: attack2
       takeName: Take 001
       internalID: 7400000
       firstFrame: 0

@@ -10,7 +10,7 @@ public class AnimationStateController : MonoBehaviour
     public float rotationSpeed = 5f;
     public float walkSpeed = 10.0f;
     private float seenRange = 100f;
-    private float attackRange = 25f;
+    public float attackRange = 25f;
     private float timeSinceAttackStarted = 0f;
     [SerializeField]
     private float momentOfDamageInAttackAnimation;
