@@ -2703,7 +2703,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 459206426}
-  m_LocalRotation: {x: 0.2203855, y: 0.0000000038556243, z: -8.711427e-10, w: 0.97541285}
+  m_LocalRotation: {x: 0.22038554, y: -0.000000025468523, z: 0.000000005754378, w: 0.97541285}
   m_LocalPosition: {x: 1141.2, y: 68.3, z: 598}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2961,6 +2961,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 20
   rotationSpeed: 60
+  dragonExample: {fileID: 0}
+  demon: {fileID: 0}
+  demon1: {fileID: 0}
+  demon2: {fileID: 0}
+  demon3: {fileID: 0}
+  demon4: {fileID: 0}
+  demon5: {fileID: 0}
+  demon6: {fileID: 0}
+  demon7: {fileID: 0}
+  demon8: {fileID: 0}
+  demon9: {fileID: 0}
+  demon10: {fileID: 0}
+  demon11: {fileID: 0}
 --- !u!95 &491860268
 Animator:
   serializedVersion: 5
@@ -6297,8 +6310,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Item Description
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
-  m_sharedMaterial: {fileID: 2147374, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -10407,8 +10420,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Item Name
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
-  m_sharedMaterial: {fileID: 2147374, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -11248,7 +11261,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2017908194}
-  m_LocalRotation: {x: 0.2203855, y: 0.0000000038556243, z: -8.711427e-10, w: 0.97541285}
+  m_LocalRotation: {x: 0.22038554, y: -0.000000025468523, z: 0.000000005754378, w: 0.97541285}
   m_LocalPosition: {x: 1141.2, y: 68.3, z: 598}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

@@ -13,6 +13,7 @@ public class Inventory : MonoBehaviour
 
     void Awake() //we need awake because if we use start onChange() from Inventory_Slot will be assigned to onInventoryChange vefore checkEmpty
     {
+        loadData();
         onInventoryChange += checkEmpty;
     }
 
@@ -153,7 +154,7 @@ public class Inventory : MonoBehaviour
         onInventoryChange -= checkEmpty;
     }
 
-    public void saveData()
+    public void saveData()  //asta o chemi cand te teleportezi
     {
         for (int i = 0; i < itemCodeArray.Length; i++)
         {
