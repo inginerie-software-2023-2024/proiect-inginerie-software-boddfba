@@ -13,8 +13,12 @@ public class Inventory : MonoBehaviour
 
     void Awake() //we need awake because if we use start onChange() from Inventory_Slot will be assigned to onInventoryChange vefore checkEmpty
     {
-        loadData();
         onInventoryChange += checkEmpty;
+    }
+
+    private void Start()
+    {
+        loadData();
     }
 
     public int addItem(int itemCode, int quantity)
