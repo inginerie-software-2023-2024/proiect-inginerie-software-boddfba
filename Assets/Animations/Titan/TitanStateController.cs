@@ -21,6 +21,8 @@ public class TitanStateController : MonoBehaviour
     private bool alreadyDamagedPlayerDuringThisAttack;
     public AudioSource deathSound;
     [SerializeField]
+    public AudioSource hahaSound;
+    [SerializeField]
     private int itemCodePlayerGetsWhenKilled;
     [SerializeField]
     private int itemQuantityPlayerGetsWhenKilled;
@@ -65,12 +67,13 @@ public class TitanStateController : MonoBehaviour
                 timeSinceAttackStarted = 0f;
                 alreadyDamagedPlayerDuringThisAttack = false;
             }
-
+            PlayHaHaSoundWithDelay(1f);
             animator.SetBool("isWalking", false);
             animator.SetBool("isAttacking", true);
 
             return;
         }
+        
         Vector3 direction = target.position - transform.position;
         direction.Normalize();
         direction.y = 0;
@@ -88,7 +91,8 @@ public class TitanStateController : MonoBehaviour
 
         if (animator.GetBool("isAttacking") == true && timeSinceAttackStarted >= momentOfDamageInAttackAnimation && alreadyDamagedPlayerDuringThisAttack == false)
         {
-            FindAnyObjectByType<PlayerStats>().changeHealth(-damageValuePerAttack);
+            FindAnyObjectByType<FrozenPlayerStats>().changeHealth(-damageValuePerAttack);
+/*            Debug.Log("Health: " + FindAnyObjectByType<FrozenPlayerStats>().getHealth());*/
             alreadyDamagedPlayerDuringThisAttack = true;
         }
 
@@ -118,14 +122,17 @@ public class TitanStateController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Axe"))
         {
-            /*Debug.Log("Health: " + health);*/
-            health -= damageValuePerAttack;
+            FrozenBrute frozenBrute = FindAnyObjectByType<FrozenBrute>();
+
+            /*            Debug.Log(frozenBrute);*/
+            Debug.Log("Titan Health: " + health);
+            health -= frozenBrute.damage;
 
             if (health < 0f)
             {
                 animator.SetBool("isDead", true);
 
-                StartCoroutine(PlayDeathSoundWithDelay(0.7f));
+                PlayDeathSoundWithDelay(1f);
                 if (alreadyDroppedItem == false)
                 {
                     FindAnyObjectByType<Inventory>().addItem(itemCodePlayerGetsWhenKilled, itemQuantityPlayerGetsWhenKilled);
@@ -140,6 +147,15 @@ public class TitanStateController : MonoBehaviour
         if (deathSound != null)
         {
             deathSound.Play(); // Play the death sound effect after the delay
+        }
+    }
+
+    private IEnumerator PlayHaHaSoundWithDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay); // Wait for the specified delay
+        if (hahaSound != null)
+        {
+            hahaSound.Play(); // Play the death sound effect after the delay
         }
     }
 }
