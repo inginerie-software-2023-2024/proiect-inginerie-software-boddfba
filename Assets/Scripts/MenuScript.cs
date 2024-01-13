@@ -12,8 +12,15 @@ public class MenuScript : MonoBehaviour
 
     public void OpenSettings()
     {
-        SceneManager.LoadScene("SettingsScene");
+        SceneManager.LoadScene("SettingScene");
     }
 
-
+    public void QuitGame()
+    {
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+            Application.Quit();
+#endif
+    }
 }

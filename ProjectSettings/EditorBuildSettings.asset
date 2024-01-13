@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/FrozenScene.unity
     guid: ff7221d399862484cad8b1a65157a8d6
+  - enabled: 1
+    path: Assets/Scenes/SettingScene.unity
+    guid: 3bd61b45a54773145b372248a5b00a6a
   m_configObjects: {}
