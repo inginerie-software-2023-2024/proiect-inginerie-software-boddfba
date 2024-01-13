@@ -56,6 +56,7 @@ public class CharacterScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Q))
         {
             isAttacking = true;
+            if (demon != null && dragonExample != null) {
             dragonExample.playerIsAttacking = true;
             demon.playerIsAttackingNPC = true;
             demon1.playerIsAttackingNPC = true;
@@ -68,7 +69,7 @@ public class CharacterScript : MonoBehaviour
             demon8.playerIsAttackingNPC = true;
             demon9.playerIsAttackingNPC = true;
             demon10.playerIsAttackingNPC = true;
-            demon11.playerIsAttackingNPC = true;
+            demon11.playerIsAttackingNPC = true; }
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha2))
@@ -103,19 +104,22 @@ public class CharacterScript : MonoBehaviour
         // Reset the attack flags when the corresponding key is released
         if (!Input.GetKey(KeyCode.Q)) {
         isAttacking = false;
-        dragonExample.playerIsAttacking = false;
-            demon.playerIsAttackingNPC = false;
-            demon1.playerIsAttackingNPC = false;
-            demon2.playerIsAttackingNPC =false;
-            demon3.playerIsAttackingNPC = false;
-            demon4.playerIsAttackingNPC = false;
-            demon5.playerIsAttackingNPC = false;
-            demon6.playerIsAttackingNPC = false;
-            demon7.playerIsAttackingNPC = false;
-            demon8.playerIsAttackingNPC = false;
-            demon9.playerIsAttackingNPC = false;
-            demon10.playerIsAttackingNPC = false;
-            demon11.playerIsAttackingNPC = false;
+            if (demon != null && dragonExample != null)
+            {
+                dragonExample.playerIsAttacking = false;
+                demon.playerIsAttackingNPC = false;
+                demon1.playerIsAttackingNPC = false;
+                demon2.playerIsAttackingNPC = false;
+                demon3.playerIsAttackingNPC = false;
+                demon4.playerIsAttackingNPC = false;
+                demon5.playerIsAttackingNPC = false;
+                demon6.playerIsAttackingNPC = false;
+                demon7.playerIsAttackingNPC = false;
+                demon8.playerIsAttackingNPC = false;
+                demon9.playerIsAttackingNPC = false;
+                demon10.playerIsAttackingNPC = false;
+                demon11.playerIsAttackingNPC = false;
+            }
         }
 
 
