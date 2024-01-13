@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class AnimationStateController : MonoBehaviour
+public class SpiderBossScript : MonoBehaviour
 {
     private Animator animator;
     public Transform target;
@@ -24,6 +24,9 @@ public class AnimationStateController : MonoBehaviour
     [SerializeField]
     private int itemQuantityPlayerGetsWhenKilled;
     private bool alreadyDroppedItem = false;
+    [SerializeField]
+    public int nr_of_healts;
+    int count_healts = 0;
 
     void Start()
     {
@@ -116,17 +119,20 @@ public class AnimationStateController : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Axe"))
-        { 
 
-
-            animator.SetBool("isDead", true);
-
-            StartCoroutine(PlayDeathSoundWithDelay(0.7f));
-            if (alreadyDroppedItem == false)
+        {
+            if (count_healts == 10)
             {
-                FindAnyObjectByType<Inventory>().addItem(itemCodePlayerGetsWhenKilled, itemQuantityPlayerGetsWhenKilled);
-                alreadyDroppedItem = true;
+                animator.SetBool("isDead", true);
+
+                StartCoroutine(PlayDeathSoundWithDelay(0.7f));
+                if (alreadyDroppedItem == false)
+                {
+                    FindAnyObjectByType<Inventory>().addItem(itemCodePlayerGetsWhenKilled, itemQuantityPlayerGetsWhenKilled);
+                    alreadyDroppedItem = true;
+                }
             }
+            else { count_healts += 1; }
         }
     }
     private IEnumerator PlayDeathSoundWithDelay(float delay)
