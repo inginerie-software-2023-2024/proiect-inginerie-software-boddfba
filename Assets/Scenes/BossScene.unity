@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1000,8 +1000,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 098ee61c846360f41ba14c841167345a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemCodeArray: 0100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-  quantityArray: 0e00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  itemCodeArray: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  quantityArray: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
 --- !u!114 &163933037
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2095,11 +2095,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2719741434848807717, guid: f099ea7416967584382b61b8c01d3f93, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: -800
       objectReference: {fileID: 0}
     - target: {fileID: 2719741434848807717, guid: f099ea7416967584382b61b8c01d3f93, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -450
       objectReference: {fileID: 0}
     - target: {fileID: 2719741434848807717, guid: f099ea7416967584382b61b8c01d3f93, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2114,8 +2114,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4572623016243082526, guid: f099ea7416967584382b61b8c01d3f93, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4572623016243082526, guid: f099ea7416967584382b61b8c01d3f93, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -440
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6994,17 +6998,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteArrayHelper:
   - {fileID: 0}
-  - {fileID: 21300000, guid: 6f459da9298fcc744a2e7d11c2964682, type: 3}
   - {fileID: 21300000, guid: ef526f61b023ccf468ffca389b2059d2, type: 3}
+  - {fileID: 21300000, guid: a0adfc2dd3325fd4dbe8adfad86e7260, type: 3}
+  - {fileID: 21300000, guid: 4ca352003c623494d9d50309a7c885c2, type: 3}
+  - {fileID: 21300000, guid: 75e8585518097c24ab7146c0a641e5ca, type: 3}
   nameArrayHelper:
   - 
-  - Test
   - Patato
+  - Lava Diamond
+  - Sand Crystal
+  - Ice Diamond
   descriptionArrayHelper:
   - 
-  - Test description
-  - Good when you are hungry
-  inventoryLimitHelper: 000000001400000014000000
+  - Increases your health
+  - A diamond forged from the lava of the haunted moutain
+  - A crystal crafted from the clearest grains of sand found in the desert
+  - An ice forged in the shape of a pretious stone
+  inventoryLimitHelper: 0000000001000000010000000100000014000000
 --- !u!1001 &1225095723
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7676,6 +7686,74 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventoryTab: {fileID: 2088979005}
+--- !u!1 &1445617578
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1445617581}
+  - component: {fileID: 1445617580}
+  - component: {fileID: 1445617579}
+  m_Layer: 0
+  m_Name: EventSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1445617579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1445617578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
+  m_HorizontalAxis: Horizontal
+  m_VerticalAxis: Vertical
+  m_SubmitButton: Submit
+  m_CancelButton: Cancel
+  m_InputActionsPerSecond: 10
+  m_RepeatDelay: 0.5
+  m_ForceModuleActive: 0
+--- !u!114 &1445617580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1445617578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FirstSelected: {fileID: 0}
+  m_sendNavigationEvents: 1
+  m_DragThreshold: 10
+--- !u!4 &1445617581
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1445617578}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1453800571 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100004, guid: a9ad445cb02a11d428f39b0995d05478, type: 3}

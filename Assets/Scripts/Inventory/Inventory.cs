@@ -16,6 +16,11 @@ public class Inventory : MonoBehaviour
         onInventoryChange += checkEmpty;
     }
 
+    private void Start()
+    {
+        loadData();
+    }
+
     public int addItem(int itemCode, int quantity)
     {
         int inventoryLimit = ItemsList.getInventoryLimit(itemCode);
@@ -153,7 +158,7 @@ public class Inventory : MonoBehaviour
         onInventoryChange -= checkEmpty;
     }
 
-    public void saveData()
+    public void saveData()  //asta o chemi cand te teleportezi
     {
         for (int i = 0; i < itemCodeArray.Length; i++)
         {

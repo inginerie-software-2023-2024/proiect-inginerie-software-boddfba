@@ -2082,6 +2082,7 @@ GameObject:
   m_Component:
   - component: {fileID: 335474174}
   - component: {fileID: 335474175}
+  - component: {fileID: 335474176}
   m_Layer: 0
   m_Name: Scripts-Manager
   m_TagString: Untagged
@@ -2118,6 +2119,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 145628188}
+--- !u!114 &335474176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 335474173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7aaaca67e1f80df41ab1a8f0ee6f0e3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  healthFill: {fileID: 1633199446899691979}
+  healthUpdateTime: 2
 --- !u!1 &336615011
 GameObject:
   m_ObjectHideFlags: 0
@@ -2703,7 +2719,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 459206426}
-  m_LocalRotation: {x: 0.2203855, y: 0.0000000038556243, z: -8.711427e-10, w: 0.97541285}
+  m_LocalRotation: {x: 0.22038554, y: -0.000000025468523, z: 0.000000005754378, w: 0.97541285}
   m_LocalPosition: {x: 1141.2, y: 68.3, z: 598}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2961,6 +2977,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 20
   rotationSpeed: 60
+  dragonExample: {fileID: 0}
+  demon: {fileID: 0}
+  demon1: {fileID: 0}
+  demon2: {fileID: 0}
+  demon3: {fileID: 0}
+  demon4: {fileID: 0}
+  demon5: {fileID: 0}
+  demon6: {fileID: 0}
+  demon7: {fileID: 0}
+  demon8: {fileID: 0}
+  demon9: {fileID: 0}
+  demon10: {fileID: 0}
+  demon11: {fileID: 0}
 --- !u!95 &491860268
 Animator:
   serializedVersion: 5
@@ -3050,21 +3079,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &491860271
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 491860265}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7aaaca67e1f80df41ab1a8f0ee6f0e3c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 100
-  healthFill: {fileID: 1633199446899691979}
-  healthUpdateTime: 2
 --- !u!65 &491860272
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6297,8 +6311,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Item Description
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
-  m_sharedMaterial: {fileID: 2147374, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -9152,7 +9166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05602b3aab118644a68537559686669, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scenename: DessertScene
+  scenename: CountryScene
 --- !u!1001 &1718933320
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10229,9 +10243,6 @@ PrefabInstance:
       addedObject: {fileID: 491860270}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c8613c4386020e1488921bef86c236e8, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 491860271}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c8613c4386020e1488921bef86c236e8, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 491860272}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c8613c4386020e1488921bef86c236e8, type: 3}
       insertIndex: -1
@@ -10407,8 +10418,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Item Name
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
-  m_sharedMaterial: {fileID: 2147374, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -11248,7 +11259,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2017908194}
-  m_LocalRotation: {x: 0.2203855, y: 0.0000000038556243, z: -8.711427e-10, w: 0.97541285}
+  m_LocalRotation: {x: 0.22038554, y: -0.000000025468523, z: 0.000000005754378, w: 0.97541285}
   m_LocalPosition: {x: 1141.2, y: 68.3, z: 598}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -11524,8 +11535,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 098ee61c846360f41ba14c841167345a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemCodeArray: 0100000002000000030000000400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-  quantityArray: 0500000001000000010000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  itemCodeArray: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  quantityArray: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
 --- !u!224 &2106782678 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7756507930865361879, guid: bba8d37065e874e499f21c2d1609791a, type: 3}
