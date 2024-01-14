@@ -1,11 +1,13 @@
 using UnityEngine;
 using static PlayerStats;
+using UnityEngine.SceneManagement;
 
 public class FrozenBrute : MonoBehaviour
 {
     Animator animator;
     public float moveSpeed = 20f;
     public float rotationSpeed = 60f;
+    public float damage = 20f;
     private bool isAttacking = false;
     private bool is360 = false;
     private bool isJumpAttack = false;
@@ -13,7 +15,7 @@ public class FrozenBrute : MonoBehaviour
     private bool isHook = false;
     private bool isDead = false;
     private CharacterController characterController;
-    PlayerStats playerStats;
+    FrozenPlayerStats playerStats;
 
 
     void Start()
@@ -22,16 +24,13 @@ public class FrozenBrute : MonoBehaviour
         characterController = GetComponent<CharacterController>();
 
         // Find and store reference to PlayerStats component
-        playerStats = GetComponent<PlayerStats>();
+        playerStats = FindAnyObjectByType<FrozenPlayerStats>();
     }
 
     void Update()
     {
-        if (isDead) { return; }
-
         // Access player's health using the PlayerStats reference
         float playerHealth = playerStats.getHealth();
-        Debug.Log("Health: " + playerHealth);
 
         // Check for player's death
         if (playerHealth <= 0 && !isDead)
@@ -39,7 +38,13 @@ public class FrozenBrute : MonoBehaviour
             // Trigger death animation or perform death logic
             isDead = true;
             animator.SetBool("isDead", isDead);
+
+            Debug.Log("You are dead!");
+
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
             // Additional death logic can be added here
+            return;
         }
 
         float horizontalInput = 0f;
@@ -109,5 +114,6 @@ public class FrozenBrute : MonoBehaviour
 
         if (!Input.GetKey(KeyCode.Alpha5))
             isHook = false;
+
     }
 }

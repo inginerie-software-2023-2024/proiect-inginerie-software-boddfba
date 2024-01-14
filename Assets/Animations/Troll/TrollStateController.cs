@@ -11,7 +11,7 @@ public class TrollStateController : MonoBehaviour
     public float walkSpeed = 20.0f;
     private float health = 100f;
     private float seenRange = 100f;
-    private float attackRange = 25f;
+    private float attackRange = 15f;
     private float timeSinceAttackStarted = 0f;
     [SerializeField]
     private float momentOfDamageInAttackAnimation;
@@ -41,8 +41,8 @@ public class TrollStateController : MonoBehaviour
     {
         if (animator.GetBool("isDead") == false)
         {
-            FollowTarget();
-            DamagePlayer();
+                FollowTarget();
+                DamagePlayer();
         }
 
     }
@@ -88,7 +88,8 @@ public class TrollStateController : MonoBehaviour
 
         if (animator.GetBool("isAttacking") == true && timeSinceAttackStarted >= momentOfDamageInAttackAnimation && alreadyDamagedPlayerDuringThisAttack == false)
         {
-            FindAnyObjectByType<PlayerStats>().changeHealth(-damageValuePerAttack);
+            FindAnyObjectByType<FrozenPlayerStats>().changeHealth(-damageValuePerAttack);
+/*            Debug.Log("Health: " + FindAnyObjectByType<FrozenPlayerStats>().getHealth());*/
             alreadyDamagedPlayerDuringThisAttack = true;
         }
 
@@ -118,13 +119,16 @@ public class TrollStateController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Axe"))
         {
-            Debug.Log("Health: " + health);
-            health -= damageValuePerAttack;
+            FrozenBrute frozenBrute = FindAnyObjectByType<FrozenBrute>();
+
+            // Debug.Log(frozenBrute);
+            Debug.Log("Troll Health: " + health);
+            health -= frozenBrute.damage;
 
             if (health < 0f) {
                 animator.SetBool("isDead", true);
 
-                StartCoroutine(PlayDeathSoundWithDelay(0.7f));
+                PlayDeathSoundWithDelay(1f);
                 if (alreadyDroppedItem == false)
                 {
                     FindAnyObjectByType<Inventory>().addItem(itemCodePlayerGetsWhenKilled, itemQuantityPlayerGetsWhenKilled);
