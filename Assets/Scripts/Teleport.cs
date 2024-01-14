@@ -15,7 +15,7 @@ public class Teleport : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Player") && FindAnyObjectByType<Inventory>().verifyItemsExistence(itemQuantitiessRequired, itemCodesRequired))
+        if(other.CompareTag("Player") && FindAnyObjectByType<Inventory>().verifyItemsExistence(itemCodesRequired, itemQuantitiessRequired))
         {
             FindAnyObjectByType<Inventory>().saveData();
             SceneManager.LoadScene(scenename);

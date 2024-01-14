@@ -193,7 +193,7 @@ public class Inventory : MonoBehaviour
             if (foundQuantity < quantityArrayToCheck[i])
                 return false;
         }
-
+        
         return true;
     }
 }

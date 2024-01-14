@@ -87,9 +87,9 @@ public class TitanStateController : MonoBehaviour
 
     private void DamagePlayer()
     {
-        Debug.Log(animator.GetBool("isAttacking"));
+      
         timeSinceAttackStarted += Time.deltaTime;
-        Debug.Log(attackAnimationClipLength);
+   
         if (animator.GetBool("isAttacking") == true && timeSinceAttackStarted >= momentOfDamageInAttackAnimation && alreadyDamagedPlayerDuringThisAttack == false)
         {
             Debug.Log("IN INF");
