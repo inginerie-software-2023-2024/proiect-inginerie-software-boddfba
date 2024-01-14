@@ -52,7 +52,6 @@ public class SettingsMenu : MonoBehaviour
         float volume = sliderVolume.value;
         audioMixer.SetFloat("MyExposedParam", (float)(Math.Log10(volume) * 20));
 
-
     }
 
     public void SetResolution(int resolutionIndex)

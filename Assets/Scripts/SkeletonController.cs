@@ -3,15 +3,14 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class TrollStateController : MonoBehaviour
+public class SkeletonController : MonoBehaviour
 {
     private Animator animator;
     public Transform target;
     public float rotationSpeed = 5f;
-    public float walkSpeed = 20.0f;
-    private float health = 100f;
+    public float walkSpeed = 10.0f;
     private float seenRange = 100f;
-    private float attackRange = 15f;
+    public float attackRange = 25f;
     private float timeSinceAttackStarted = 0f;
     [SerializeField]
     private float momentOfDamageInAttackAnimation;
@@ -44,8 +43,8 @@ public class TrollStateController : MonoBehaviour
     {
         if (animator.GetBool("isDead") == false)
         {
-                FollowTarget();
-                DamagePlayer();
+            FollowTarget();
+            DamagePlayer();
         }
 
     }
@@ -53,7 +52,7 @@ public class TrollStateController : MonoBehaviour
     private void FollowTarget()
     {
         var distance = Vector3.Distance(transform.position, target.position);
-        /*Debug.Log("Distance: " + distance);*/
+        //Debug.Log("Distance: " + distance);
         if (distance > seenRange)
         {
             animator.SetBool("isWalking", false);
@@ -92,7 +91,6 @@ public class TrollStateController : MonoBehaviour
         if (animator.GetBool("isAttacking") == true && timeSinceAttackStarted >= momentOfDamageInAttackAnimation && alreadyDamagedPlayerDuringThisAttack == false)
         {
             FindAnyObjectByType<PlayerStats>().changeHealth(-damageValuePerAttack);
-/*            Debug.Log("Health: " + FindAnyObjectByType<FrozenPlayerStats>().getHealth());*/
             alreadyDamagedPlayerDuringThisAttack = true;
         }
 
@@ -117,6 +115,7 @@ public class TrollStateController : MonoBehaviour
             }
         }
     }
+
 
     private void OnCollisionEnter(Collision collision)
     {

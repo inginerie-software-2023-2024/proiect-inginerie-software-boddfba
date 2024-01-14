@@ -7,6 +7,7 @@ public class MenuScript : MonoBehaviour
 {
     public void PlayGame()
     {
+        deleteInventoryFromPreviousSessions();
         SceneManager.LoadScene(1);
     }
 
@@ -22,5 +23,14 @@ public class MenuScript : MonoBehaviour
 #else
             Application.Quit();
 #endif
+    }
+
+    void deleteInventoryFromPreviousSessions()
+    {
+        for (int i = 0; i < 16; i++)
+        {
+            PlayerPrefs.SetInt("Inventory_Item_Code_" + i, 0);
+            PlayerPrefs.SetInt("Inventory_Item_Quantity_" + i, 0);
+        }
     }
 }
