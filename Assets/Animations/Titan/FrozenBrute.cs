@@ -15,22 +15,18 @@ public class FrozenBrute : MonoBehaviour
     private bool isHook = false;
     private bool isDead = false;
     private CharacterController characterController;
-    FrozenPlayerStats playerStats;
 
 
     void Start()
     {
         animator = GetComponent<Animator>();
         characterController = GetComponent<CharacterController>();
-
-        // Find and store reference to PlayerStats component
-        playerStats = FindAnyObjectByType<FrozenPlayerStats>();
     }
 
     void Update()
     {
         // Access player's health using the PlayerStats reference
-        float playerHealth = playerStats.getHealth();
+        float playerHealth = FindAnyObjectByType<PlayerStats>().getHealth();
 
         // Check for player's death
         if (playerHealth <= 0 && !isDead)

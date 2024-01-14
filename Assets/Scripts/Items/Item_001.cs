@@ -17,7 +17,7 @@ public class Item_001 : Item
 
     private void consume()
     {
-        FindAnyObjectByType<FrozenPlayerStats>().changeHealth(healthIncrease);
+        FindAnyObjectByType<PlayerStats>().changeHealth(healthIncrease);
         int playerInventorySlot = Player_Inventory.getSelectedSlot();
         Player_Inventory.getPlayerInventoryHolder().GetComponent<Inventory>().decreaseQuantity(1, playerInventorySlot);
     }

@@ -180,6 +180,9 @@ public class Inventory : MonoBehaviour
 
     public bool verifyItemsExistence(int[] itemCodeArrayToCheck, int[] quantityArrayToCheck)
     {
+        if (itemCodeArrayToCheck == null)
+            return true;
+
         for(int i = 0; i < itemCodeArrayToCheck.Length; i++)
         {
             int foundQuantity = 0;

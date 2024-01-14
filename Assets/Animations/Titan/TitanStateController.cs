@@ -9,9 +9,9 @@ public class TitanStateController : MonoBehaviour
     public Transform target;
     public float rotationSpeed = 5f;
     public float walkSpeed = 20.0f;
+    private float health = 100f;
     private float seenRange = 100f;
-    private float attackRange = 25f;
-    private float health = 200f;
+    private float attackRange = 15f;
     private float timeSinceAttackStarted = 0f;
     [SerializeField]
     private float momentOfDamageInAttackAnimation;
@@ -53,7 +53,7 @@ public class TitanStateController : MonoBehaviour
     private void FollowTarget()
     {
         var distance = Vector3.Distance(transform.position, target.position);
-       /* Debug.Log("Distance: " + distance);*/
+        /*Debug.Log("Distance: " + distance);*/
         if (distance > seenRange)
         {
             animator.SetBool("isWalking", false);
@@ -87,10 +87,12 @@ public class TitanStateController : MonoBehaviour
 
     private void DamagePlayer()
     {
+        Debug.Log(animator.GetBool("isAttacking"));
         timeSinceAttackStarted += Time.deltaTime;
-
+        Debug.Log(attackAnimationClipLength);
         if (animator.GetBool("isAttacking") == true && timeSinceAttackStarted >= momentOfDamageInAttackAnimation && alreadyDamagedPlayerDuringThisAttack == false)
         {
+            Debug.Log("IN INF");
             FindAnyObjectByType<PlayerStats>().changeHealth(-damageValuePerAttack);
             alreadyDamagedPlayerDuringThisAttack = true;
         }
@@ -117,7 +119,6 @@ public class TitanStateController : MonoBehaviour
         }
     }
 
-
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Axe"))
@@ -137,7 +138,6 @@ public class TitanStateController : MonoBehaviour
             else { count_healts += 1; }
         }
     }
-
     private IEnumerator PlayDeathSoundWithDelay(float delay)
     {
         yield return new WaitForSeconds(delay); // Wait for the specified delay
