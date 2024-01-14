@@ -21,12 +21,13 @@ public class TitanStateController : MonoBehaviour
     private bool alreadyDamagedPlayerDuringThisAttack;
     public AudioSource deathSound;
     [SerializeField]
-    public AudioSource hahaSound;
-    [SerializeField]
     private int itemCodePlayerGetsWhenKilled;
     [SerializeField]
     private int itemQuantityPlayerGetsWhenKilled;
     private bool alreadyDroppedItem = false;
+    [SerializeField]
+    public int nr_of_healts;
+    int count_healts = 0;
 
     void Start()
     {
@@ -67,13 +68,12 @@ public class TitanStateController : MonoBehaviour
                 timeSinceAttackStarted = 0f;
                 alreadyDamagedPlayerDuringThisAttack = false;
             }
-            PlayHaHaSoundWithDelay(1f);
+
             animator.SetBool("isWalking", false);
             animator.SetBool("isAttacking", true);
 
             return;
         }
-        
         Vector3 direction = target.position - transform.position;
         direction.Normalize();
         direction.y = 0;
@@ -91,8 +91,7 @@ public class TitanStateController : MonoBehaviour
 
         if (animator.GetBool("isAttacking") == true && timeSinceAttackStarted >= momentOfDamageInAttackAnimation && alreadyDamagedPlayerDuringThisAttack == false)
         {
-            FindAnyObjectByType<FrozenPlayerStats>().changeHealth(-damageValuePerAttack);
-/*            Debug.Log("Health: " + FindAnyObjectByType<FrozenPlayerStats>().getHealth());*/
+            FindAnyObjectByType<PlayerStats>().changeHealth(-damageValuePerAttack);
             alreadyDamagedPlayerDuringThisAttack = true;
         }
 
@@ -118,44 +117,33 @@ public class TitanStateController : MonoBehaviour
         }
     }
 
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Axe"))
+
         {
-            FrozenBrute frozenBrute = FindAnyObjectByType<FrozenBrute>();
-
-            /*            Debug.Log(frozenBrute);*/
-            Debug.Log("Titan Health: " + health);
-            health -= frozenBrute.damage;
-
-            if (health < 0f)
+            if (count_healts == nr_of_healts)
             {
                 animator.SetBool("isDead", true);
 
-                PlayDeathSoundWithDelay(1f);
+                StartCoroutine(PlayDeathSoundWithDelay(0.7f));
                 if (alreadyDroppedItem == false)
                 {
                     FindAnyObjectByType<Inventory>().addItem(itemCodePlayerGetsWhenKilled, itemQuantityPlayerGetsWhenKilled);
                     alreadyDroppedItem = true;
                 }
             }
+            else { count_healts += 1; }
         }
     }
+
     private IEnumerator PlayDeathSoundWithDelay(float delay)
     {
         yield return new WaitForSeconds(delay); // Wait for the specified delay
         if (deathSound != null)
         {
             deathSound.Play(); // Play the death sound effect after the delay
-        }
-    }
-
-    private IEnumerator PlayHaHaSoundWithDelay(float delay)
-    {
-        yield return new WaitForSeconds(delay); // Wait for the specified delay
-        if (hahaSound != null)
-        {
-            hahaSound.Play(); // Play the death sound effect after the delay
         }
     }
 }

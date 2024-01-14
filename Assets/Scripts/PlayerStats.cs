@@ -49,7 +49,7 @@ public class PlayerStats : MonoBehaviour
     public void Die()
     {
         Debug.Log("You are dead!");
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene("MainScene");
     }
 
     public void setHealth(float healthChange)
