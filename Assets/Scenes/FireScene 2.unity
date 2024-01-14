@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -496,6 +496,7 @@ MonoBehaviour:
   target: {fileID: 596263423}
   rotationSpeed: 5
   walkSpeed: 10
+  attackRange: 25
   momentOfDamageInAttackAnimation: 0.5
   damageValuePerAttack: 2
   deathSound: {fileID: 0}
@@ -617,6 +618,7 @@ MonoBehaviour:
   target: {fileID: 596263423}
   rotationSpeed: 5
   walkSpeed: 10
+  attackRange: 25
   momentOfDamageInAttackAnimation: 0.5
   damageValuePerAttack: 2
   deathSound: {fileID: 0}
@@ -1484,6 +1486,7 @@ MonoBehaviour:
   target: {fileID: 596263423}
   rotationSpeed: 5
   walkSpeed: 10
+  attackRange: 25
   momentOfDamageInAttackAnimation: 0.5
   damageValuePerAttack: 2
   deathSound: {fileID: 0}
@@ -4807,6 +4810,7 @@ MonoBehaviour:
   target: {fileID: 596263423}
   rotationSpeed: 5
   walkSpeed: 10
+  attackRange: 25
   momentOfDamageInAttackAnimation: 0.5
   damageValuePerAttack: 2
   deathSound: {fileID: 0}
@@ -6733,7 +6737,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!65 &888806800
 BoxCollider:
@@ -6793,11 +6797,11 @@ MonoBehaviour:
   rotationSpeed: 5
   walkSpeed: 10
   momentOfDamageInAttackAnimation: 0.5
-  damageValuePerAttack: 20
+  damageValuePerAttack: 10
   deathSound: {fileID: 0}
-  itemCodePlayerGetsWhenKilled: 1
+  itemCodePlayerGetsWhenKilled: 2
   itemQuantityPlayerGetsWhenKilled: 1
-  nr_of_healts: 10
+  nr_of_healts: 4
 --- !u!1 &900951025
 GameObject:
   m_ObjectHideFlags: 0
@@ -6861,7 +6865,7 @@ MonoBehaviour:
   - A diamond forged from the lava of the haunted moutain
   - A crystal crafted from the clearest grains of sand found in the desert
   - An ice forged in the shape of a pretious stone
-  inventoryLimitHelper: 0000000001000000010000000100000014000000
+  inventoryLimitHelper: 0000000014000000010000000100000001000000
 --- !u!114 &900951028
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8609,7 +8613,7 @@ Transform:
   m_Children:
   - {fileID: 1703323523}
   m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1075306688
 PrefabInstance:
@@ -8996,6 +9000,7 @@ MonoBehaviour:
   target: {fileID: 596263423}
   rotationSpeed: 5
   walkSpeed: 10
+  attackRange: 25
   momentOfDamageInAttackAnimation: 0.5
   damageValuePerAttack: 2
   deathSound: {fileID: 0}
@@ -9183,6 +9188,7 @@ MonoBehaviour:
   target: {fileID: 596263423}
   rotationSpeed: 5
   walkSpeed: 10
+  attackRange: 25
   momentOfDamageInAttackAnimation: 0.5
   damageValuePerAttack: 2
   deathSound: {fileID: 0}
@@ -10267,6 +10273,7 @@ MonoBehaviour:
   target: {fileID: 596263423}
   rotationSpeed: 5
   walkSpeed: 10
+  attackRange: 25
   momentOfDamageInAttackAnimation: 0.5
   damageValuePerAttack: 2
   deathSound: {fileID: 0}
@@ -10461,6 +10468,7 @@ MonoBehaviour:
   target: {fileID: 596263423}
   rotationSpeed: 5
   walkSpeed: 10
+  attackRange: 25
   momentOfDamageInAttackAnimation: 0.5
   damageValuePerAttack: 2
   deathSound: {fileID: 0}
@@ -10601,7 +10609,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 405980, guid: 4884e3768e9a2544a85d07afad356d87, type: 3}
       propertyPath: m_RootOrder
-      value: 23
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 405980, guid: 4884e3768e9a2544a85d07afad356d87, type: 3}
       propertyPath: m_LocalScale.x
@@ -11254,6 +11262,7 @@ MonoBehaviour:
   target: {fileID: 596263423}
   rotationSpeed: 5
   walkSpeed: 10
+  attackRange: 25
   momentOfDamageInAttackAnimation: 0.5
   damageValuePerAttack: 2
   deathSound: {fileID: 0}
@@ -11890,7 +11899,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1424940090}
-  m_LocalRotation: {x: 0.18910751, y: -0.000000018890205, z: 0.0000000036379209, w: 0.9819564}
+  m_LocalRotation: {x: 0.18910751, y: 0.000000018890205, z: -0.0000000036379209, w: 0.9819564}
   m_LocalPosition: {x: 926.9, y: 37, z: 574}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -12629,6 +12638,7 @@ MonoBehaviour:
   target: {fileID: 596263423}
   rotationSpeed: 5
   walkSpeed: 10
+  attackRange: 25
   momentOfDamageInAttackAnimation: 0.5
   damageValuePerAttack: 2
   deathSound: {fileID: 0}
@@ -13416,7 +13426,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1712585808}
-  m_LocalRotation: {x: 0.18910751, y: -0.000000018890205, z: 0.0000000036379209, w: 0.9819564}
+  m_LocalRotation: {x: 0.18910751, y: 0.000000018890205, z: -0.0000000036379209, w: 0.9819564}
   m_LocalPosition: {x: 926.9, y: 37, z: 574}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -13891,6 +13901,7 @@ MonoBehaviour:
   target: {fileID: 596263423}
   rotationSpeed: 5
   walkSpeed: 10
+  attackRange: 25
   momentOfDamageInAttackAnimation: 0.5
   damageValuePerAttack: 2
   deathSound: {fileID: 0}
@@ -14713,7 +14724,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400140, guid: bc600cce01eb57a409f4e69025868a2c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -96
+      value: -110.1
       objectReference: {fileID: 0}
     - target: {fileID: 400140, guid: bc600cce01eb57a409f4e69025868a2c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -14998,6 +15009,7 @@ MonoBehaviour:
   target: {fileID: 596263423}
   rotationSpeed: 5
   walkSpeed: 10
+  attackRange: 25
   momentOfDamageInAttackAnimation: 0.5
   damageValuePerAttack: 2
   deathSound: {fileID: 0}
@@ -15116,7 +15128,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 405980, guid: 4884e3768e9a2544a85d07afad356d87, type: 3}
       propertyPath: m_RootOrder
-      value: 22
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 405980, guid: 4884e3768e9a2544a85d07afad356d87, type: 3}
       propertyPath: m_LocalScale.x
@@ -16161,6 +16173,7 @@ MonoBehaviour:
   target: {fileID: 596263423}
   rotationSpeed: 5
   walkSpeed: 10
+  attackRange: 25
   momentOfDamageInAttackAnimation: 0.5
   damageValuePerAttack: 2
   deathSound: {fileID: 0}

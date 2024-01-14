@@ -25,6 +25,9 @@ public class TitanStateController : MonoBehaviour
     [SerializeField]
     private int itemQuantityPlayerGetsWhenKilled;
     private bool alreadyDroppedItem = false;
+    [SerializeField]
+    public int nr_of_healts;
+    int count_healts = 0;
 
     void Start()
     {
@@ -114,14 +117,13 @@ public class TitanStateController : MonoBehaviour
         }
     }
 
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Axe"))
-        {
-            /*Debug.Log("Health: " + health);*/
-            health -= damageValuePerAttack;
 
-            if (health < 0f)
+        {
+            if (count_healts == nr_of_healts)
             {
                 animator.SetBool("isDead", true);
 
@@ -132,8 +134,10 @@ public class TitanStateController : MonoBehaviour
                     alreadyDroppedItem = true;
                 }
             }
+            else { count_healts += 1; }
         }
     }
+
     private IEnumerator PlayDeathSoundWithDelay(float delay)
     {
         yield return new WaitForSeconds(delay); // Wait for the specified delay

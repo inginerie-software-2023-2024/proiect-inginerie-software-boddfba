@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2819,8 +2819,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 315100003}
-  m_LocalRotation: {x: 0.2425356, y: 0, z: 0, w: 0.97014254}
-  m_LocalPosition: {x: 750.9, y: 2.0999923, z: 325.5}
+  m_LocalRotation: {x: 0.2425356, y: -1e-45, z: 0, w: 0.97014254}
+  m_LocalPosition: {x: 750.9, y: 2.0809999, z: 325.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -5396,7 +5396,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58d056bdbd07662478249ecf372e9611, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  moveSpeed: 2.33
   rotationSpeed: 45
   dragonExample: {fileID: 0}
   demon: {fileID: 0}
@@ -7259,7 +7259,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c8613c4386020e1488921bef86c236e8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.0000076293945
+      value: -0.019
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c8613c4386020e1488921bef86c236e8, type: 3}
       propertyPath: m_LocalPosition.z
@@ -10234,15 +10234,15 @@ MonoBehaviour:
   - 
   - Patato
   - Lava Diamond
-  - Sand Crystal
+  - Crystal
   - Ice Diamond
   descriptionArrayHelper:
   - 
   - Increases your health
   - A diamond forged from the lava of the haunted moutain
-  - A crystal crafted from the clearest grains of sand found in the desert
+  - A crystal found in the deepes mines of Saurus
   - An ice forged in the shape of a pretious stone
-  inventoryLimitHelper: 0000000001000000010000000100000014000000
+  inventoryLimitHelper: 0000000014000000010000000100000001000000
 --- !u!1 &942184243
 GameObject:
   m_ObjectHideFlags: 3
@@ -64221,7 +64221,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1619121044}
-  m_LocalRotation: {x: -0, y: 1e-45, z: -0, w: 1}
+  m_LocalRotation: {x: -0, y: -3e-45, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -65416,10 +65416,10 @@ MonoBehaviour:
   walkSpeed: 5
   attackRange: 5
   momentOfDamageInAttackAnimation: 0.5
-  damageValuePerAttack: 2
+  damageValuePerAttack: 10
   deathSound: {fileID: 0}
-  itemCodePlayerGetsWhenKilled: 2
-  itemQuantityPlayerGetsWhenKilled: 2
+  itemCodePlayerGetsWhenKilled: 3
+  itemQuantityPlayerGetsWhenKilled: 1
 --- !u!1 &1762096933
 GameObject:
   m_ObjectHideFlags: 0
