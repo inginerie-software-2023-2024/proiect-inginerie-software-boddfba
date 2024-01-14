@@ -121,7 +121,7 @@ public class SpiderBossScript : MonoBehaviour
         if (collision.gameObject.CompareTag("Axe"))
 
         {
-            if (count_healts == 10)
+            if (count_healts == nr_of_healts)
             {
                 animator.SetBool("isDead", true);
 
