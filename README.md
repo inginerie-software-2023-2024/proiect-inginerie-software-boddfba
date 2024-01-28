@@ -104,3 +104,73 @@ Every player will have their predefined abilities and can scale up their power b
 - Mihai-Razvan Dana
 - George Boboc (Senior Code)
 - Nicolae Dirva (TL)
+
+
+
+# Software Architecture Report 
+
+
+Project: Elysian Solitude 
+Date: 01.2024
+Version: commit 67e3cbf
+
+## What the purpose of the software project is 
+* This may be a summary based on the planning documentation. 
+A fully working Massively Multiplayer Online Role-Playing Game (MMORPG) in Unity (Metin 2 style) . The game will have a few maps based on different themes where players can meet and level up by defeating different monsters and bosses. Every player will have their predefined abilities and can scale up their power by going on different adventures across the world.	
+
+* Fulfilled capabilities – what can the project do at this point, and what is to be done until project fulfillment. 
+The whole idea of the game is travelling along all the maps, get all the items and finish your job to save the Empire. Along your way, you can do many different actions:
+You can explore the design of different maps
+You can battle with different mobs, correlated to the map theme
+You can defeat bosses in the maps and gain different items
+After killing a mob, you can use the items it drops to restore the health
+You can use the items dropped by the bosses to teleport to other maps
+		
+## Guides on how to: 
+* Run the project locally.
+		To run the project locally you should run the .exe file (the builded version of the game), or open it in Unity app and run from a scene.
+* Build the project. 
+		The project is already builded. Otherwise, you should download and install Unity and UnityHub, open the project and then click on run. To build it you should press the build button.
+* Deploy the project (either locally, or how is it hosted, where it is the case) 
+		To deploy the project you should enter the site itch.io (or other similar site) and upload the project.
+* Contribution guide  
+Patterns used in your application 
+			We used a few patterns like Singletone - MainMenu.
+
+## Application entry points 
+* Data sources 
+		The code and the packages we used is organized in the Assets folder of the project. There are all the documents of the application.
+		
+* Data inputs 
+		The inputs are mouse and keyboard events, witch controls the player and the action. With W,A,S,D you can walk on the map forward, to the left or right, or backward. With Q you can beat enemies, and the same you can do by using the 1,2,3 keys. The mouse is used to control the main menu.
+* Configuration files 
+	The project contains basic configuration files for a Unity project.
+
+## High level diagrams of the architecture  
+* User/data journeys 
+	The users follow the next road map in their progress along the game. There are five maps where our hero should beat all the enemies to receive items in inventory. These items are valuable because it helps you travel between the maps and after the battle with the final boss, you receive a special one, that announce you about finishing all your long road and beating all the monsters. That comes with a special Congratulations message. 
+	![ERROR](https://github.com/inginerie-software-2023-2024/proiect-inginerie-software-boddfba/blob/main/Images/state_diagram.png)
+* Most valuable output 
+		The most valuable output of the game is the pleasure of playing it. You receive items by playing to keep it interesting, and each item is useful at one step. 
+
+## Deployment plan 
+* Where is the application deployed. 
+The application is deployed on itch.io and it is available on this link: https://de3v.itch.io/eli 
+* How the CI/CD pipeline works. 
+	Before pushing different changes in the map, we had to check for any conflicts with the code on our branch, and had to adapt it so that the game would work. Everyone had a branch, and after making sure that the branch is safe to use as the main game, it would have a pull request to push it to main.
+
+## Description of the QA process 
+* Test suites – what do they test.
+	We tested the way combat works, if the teleportation is in concordance with the schema we had and if the items dropped by a mob restores health
+
+## External dependencies included in the project 
+* APIs used 
+	Our project does not integrate with external APIs.
+* Libraries 
+	The game uses only Libraries offered by Unity (UnityEngine.UI , UnityEngine.Events etc.). There are some assets from the game that are imported from AssetStore.
+How vulnerable is the project to dependency attacks (ex. Dependency Confusion) 
+Dependency attacks, like Dependency Confusion, are a concern for any modern software project. We've tried to reduce this risk and we ensured that all the libraries and assets are sourced from official and verified repositories, and that means that our project contains only secure and autentic versions..
+
+
+
+
