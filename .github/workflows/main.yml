@@ -27,8 +27,8 @@ jobs:
                 UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
                 UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
               with:
-                targetPlatform: WebGL
+                targetPlatform: ${{ matrix.targetPlatform }}
             - uses: actions/upload-artifact@v3
               with:
                   name: Build-${{ matrix.targetPlatform }}
-                  path: ${{ github.workspace }}
+                  path: build
