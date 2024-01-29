@@ -157,11 +157,21 @@ Patterns used in your application
 * Where is the application deployed. 
 The application is deployed on itch.io and it is available on this link: https://de3v.itch.io/eli 
 * How the CI/CD pipeline works. 
-	Before pushing different changes in the map, we had to check for any conflicts with the code on our branch, and had to adapt it so that the game would work. Everyone had a branch, and after making sure that the branch is safe to use as the main game, it would have a pull request to push it to main.
+	We have 2 workflows running: Build workflow and Testing worklow.
+-> The Build workflow is configured through the main.yml file and is triggered at every push and pull request. It is configured build the game and to export it into a Win64x playable version. It is made up of 4 steps :
+	- Checkout action is used to clone the repository into the runner's workspace
+	- Caching action is used to cahce the 'Library' directory and can speed up the build process by up to 50%
+        - Unity Builder action is employed to build the Unity project using Unity credentials stored as secrets
+        - Upload Artifact action is used to upload the build artifacts to github and provides a stable playable version of the game.
+ -> The test workllow is configured through the test.yml file and is triggered at every push and pull request. It is configured to provide test results in play-mode, edit-mode and standalone-mode. It is made up of 4 steps:
+        - The Checkout, Caching are very similar to the Build workflow steps.
+        - Unity Test Runner action which is made to run tests in the 3 different modes.
+        - Upload Artifact action is used to upload test results.
 
 ## Description of the QA process 
 * Test suites – what do they test.
-	We tested the way combat works, if the teleportation is in concordance with the schema we had and if the items dropped by a mob restores health
+	-> We basically did Manual Unit Testing where each of us tested key parts of their map including character movement, items dropped, mob interactions etc. If we look through many of the scripts we will surely find a lot of commented Debug.Log() lines of code.
+        -> We also created the CI/CD pipeline for testing where we provide test results for every different mode in Unity.
 
 ## External dependencies included in the project 
 * APIs used 
