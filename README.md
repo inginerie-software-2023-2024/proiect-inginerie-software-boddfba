@@ -171,8 +171,8 @@ The application is deployed on itch.io and it is available on this link: https:/
 
 ## Description of the QA process 
 * Test suites – what do they test.
-	-> We basically did Manual Unit Testing where each of us tested key parts of their map including character movement, items dropped, mob interactions etc. If we look through many of the scripts we will surely find a lot of commented Debug.Log() lines of code.
-        -> We also created the CI/CD pipeline for testing where we provide test results for every different mode in Unity.
+	- We basically did Manual Unit Testing where each of us tested key parts of their map including character movement, items dropped, mob interactions etc. If we look through many of the scripts we will surely find a lot of commented Debug.Log() lines of code.
+    - We also created the CI/CD pipeline for testing where we provide test results for every different mode in Unity.
 
 ## External dependencies included in the project 
 * APIs used 

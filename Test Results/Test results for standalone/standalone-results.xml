@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="0" result="Passed" total="0" passed="0" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2024-01-29 22:52:09Z" end-time="2024-01-29 22:52:09Z" duration="0.0025145">
+  <test-suite type="TestSuite" id="1000" name="animations" fullname="animations" runstate="Runnable" testcasecount="0" result="Passed" start-time="2024-01-29 22:52:09Z" end-time="2024-01-29 22:52:09Z" duration="0.002515" total="0" passed="0" failed="0" inconclusive="0" skipped="0" asserts="0">
+    <properties />
+  </test-suite>
+</test-run>
