@@ -11,6 +11,12 @@ public class Inventory : MonoBehaviour
     public delegate void OnInventoryChange();
     public OnInventoryChange onInventoryChange;
 
+    public Inventory(int[] codes, int[] quantities)
+    {
+        itemCodeArray = codes;
+        quantityArray = quantities;
+    }
+
     void Awake() //we need awake because if we use start onChange() from Inventory_Slot will be assigned to onInventoryChange vefore checkEmpty
     {
         onInventoryChange += checkEmpty;
